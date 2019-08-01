@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\..\netfx.props" />
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net46;netcoreapp2.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.2</TargetFrameworks>
     <FsLexToolPath Condition="'$(MSBuildRuntimeType)'!='Core'">..\..\src\FsLex\bin\$(Configuration)\net46</FsLexToolPath>
     <FsYaccToolPath Condition="'$(MSBuildRuntimeType)'!='Core'" >..\..\src\FsYacc\bin\$(Configuration)\net46</FsYaccToolPath>
     <FsLexToolPath Condition="'$(MSBuildRuntimeType)'=='Core'">..\..\src\FsLex\bin\$(Configuration)\netcoreapp2.0</FsLexToolPath>
@@ -26,7 +25,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FsLexYacc.Runtime\FsLexYacc.Runtime.fsproj" />
+    <ProjectReference Include="..\..\src\Runtime\FsLexYacc.Runtime.fsproj" />
   </ItemGroup>
-  <Import Project="..\..\src\FsLexYacc.Build.Tasks\FsLexYacc.targets"  />
+  <Import Project="..\..\src\Build.Tasks\FsLexYacc.targets"  />
 </Project>
